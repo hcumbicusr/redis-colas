@@ -5,7 +5,9 @@
 
 # Para visualizar db redis con redis-commander
 > npm install -g redis-commander
+# Para ejecutar el servicio de visualización de redis
 > redis-commander
+
 `Abrir el navegador: http://127.0.0.1:8081`
 
 ***
