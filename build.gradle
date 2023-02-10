@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'com.hcumbicusr'
+//version '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Servicio de colas con Redis', 'Main-Class': 'com.hcumbicusr.redis.Main'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'redis.clients:jedis:3.0.1'
+    //testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    //testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
